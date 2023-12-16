@@ -2,6 +2,8 @@ import { Routes, Route, BrowserRouter } from "react-router-dom"
 import {useState, useEffect} from 'react'
 import Home from "./pages/Home";
 import Faq from './pages/Faq'
+import Stake from './pages/Stake'
+import Gallery from './pages/Gallery'
 import Loading from './pages/Loading'
 import './App.css'
 
@@ -26,6 +28,8 @@ function App() {
             <BrowserRouter>
             <Routes>
                 <Route path="/" exact element={<Home />} />
+                <Route path="/gallery" exact element={<Gallery />} />
+                <Route path="/stake" exact element={<Stake />} />
                 <Route path="/faq" exact element={<Faq />} />
             </Routes>
             </BrowserRouter>
