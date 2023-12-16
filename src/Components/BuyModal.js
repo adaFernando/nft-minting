@@ -5,7 +5,6 @@ import { NotificationManager } from "react-notifications";
 
 import WarningModal from "./WarningModal";
 import SuccessModal from "./SuccessModal";
-import api from "../utils/api";
 
 import emailjs from "emailjs-com";
 const pay_method = [
@@ -64,52 +63,6 @@ function BuyModal({ buyCase }) {
       return 0;
     }
 
-    if (walletAddress && email && payMethod) {
-      const sendData = {
-        wallet: account,
-        email: email,
-        xcbAddress: walletAddress,
-        serverType: buyCase,
-        coinId: payMethod,
-      };
-
-      const res = await api.post("/miningserver", JSON.stringify(sendData));
-      console.log("pay_method[payMethod].name", pay_method[payMethod].name);
-      let templateParams = {
-        from: email,
-        to: "",
-        walletAddress: account,
-        xcbAddress: walletAddress,
-        serverType: buyCase + "Kh/s",
-        payMethod: pay_method[payMethod - 1].name,
-      };
-
-      if (res.data.wallet) {
-        NotificationManager.success(
-          "You have listed the item successfully!",
-          "Success"
-        );
-        emailjs
-          // .send('<your_service_id>', '<your_template_id>', templateParams, '<your_user_id>')
-          // .send('service_t38djji', 'template_dra1fcn', templateParams, '0Lx_Ob4doGIFMxyvq')
-          // .send('service_e0flmyl', 'template_iolpv46', templateParams, 'K_97JYfMkI2KSorMv')
-          .send(
-            "service_t38djji",
-            "template_dra1fcn",
-            templateParams,
-            "0Lx_Ob4doGIFMxyvq"
-          )
-          .then(
-            (response) => {
-              console.log("response.text", response);
-            },
-            (error) => {
-              console.log(error.text);
-            }
-          );
-      }
-      console.log("res", res.data);
-    }
   };
   return (
     <>
@@ -173,12 +126,12 @@ function BuyModal({ buyCase }) {
                     
                 </div>
               </div>
-              <h3 className="text-yellow mt-5 title_buymodal">YOUR XCB Wallet Address</h3>
+              <h3 className="text-yellow mt-5 title_buymodal">YOUR Wallet Address</h3>
               <div className="d-flex justify-content-center">
                 <input
                   type="text"
                   className="trans__background_buymodal inputsize_buymodal1"
-                  id="modal__xcb"
+                  id="modal__address"
                   style={{width: "60%"}}
                   placeholder="cb36f90511369410bc204f631d11bb2f24870a0e4a7a"
                   onChange={handleChange_walletAddress}
@@ -186,7 +139,7 @@ function BuyModal({ buyCase }) {
                 />
               </div>
               <p className="text-yellow title_buymodal_p">
-                Enter here your correct XCB wallet address for which you buy the
+                Enter here your correct wallet address for which you buy the
                 KH/s
               </p>
 
@@ -195,7 +148,7 @@ function BuyModal({ buyCase }) {
                 <input
                   type="text"
                   className="trans__background_buymodal inputsize_buymodal2"
-                  id="modal__xcb"
+                  id="modal__address"
                   style={{width: "33%"}}
                   placeholder="torsten@gmail.com"
                   onChange={handleChange_email}
