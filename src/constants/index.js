@@ -6,10 +6,7 @@ export const chain = "goerli"; // or 'bsc', 'polygon', etc.
 
 export const ChainId = {
   MAINNET: 1,
-  ROPSTEN: 3,
-  RINKEBY: 4,
   GOERLI: 5,
-  KOVAN: 42,
   MATIC: 137,
   MATIC_TESTNET: 80001,
   FANTOM: 250,
