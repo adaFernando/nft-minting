@@ -1,12 +1,18 @@
 import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 
+import api  from '../utils/api'
+
 function Faq() {
   const [faqs, setFaqs] = useState([])
   const [success, setSuccess] = useState(false)
   useEffect(()=> {
     async function fetchData() {
-      
+      const res = await api.get('/faq');
+      console.log(res.data)
+      setSuccess(res.data.status)
+      setFaqs(res.data.faqs)
+      // handle the data
     }
     fetchData();
   },[success])
