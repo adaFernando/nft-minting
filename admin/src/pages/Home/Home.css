@@ -1,0 +1,29 @@
+body {
+    font-family: 'Gilroy';
+}
+.bigdiv_width{
+    width: 70%;
+    margin: auto;
+}
+.container {
+    width: 100%;
+    display: flex;
+}
+
+.custom-modal .modal-dialog {
+    width: 300px !important;
+}
+  
+  .custom-modal .modal-content {
+    border-radius: 0.25rem;
+}
+ .custom-checkbox {
+     -webkit-appearance: none; 
+     -moz-appearance: none; appearance: none; 
+     border: 2px solid yellow; border-radius: 50%;
+      width: 15px; height: 15px; cursor: pointer; 
+}
+
+.custom-checkbox:checked { background-color: yellow; border-color: yellow; }
+
+/* Add custom checkmark color */ 
