@@ -7,7 +7,8 @@
     "start": "node server",
     "server": "nodemon --quiet server",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "admin": "npm start --prefix admin",
+    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run admin\""
   },
   "author": "Brad Traversy",
   "license": "MIT",
