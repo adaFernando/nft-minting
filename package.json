@@ -8,6 +8,9 @@
     "server": "nodemon --quiet server",
     "client": "npm start --prefix client",
     "admin": "npm start --prefix admin",
+    "client-install": "npm install --prefix client",
+    "admin-install": "npm install --prefix admin",
+    "installall": "concurrently \"npm install\" \"npm run client-install\" \"npm run admin-install\"",
     "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run admin\""
   },
   "author": "Brad Traversy",

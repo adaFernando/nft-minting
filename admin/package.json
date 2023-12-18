@@ -12,6 +12,7 @@
     "@web3-react/walletlink-connector": "^6.2.14",
     "axios": "^1.4.0",
     "buffer": "^6.0.3",
+    "devconnector": "file:..",
     "dotenv": "^16.0.3",
     "ethers": "^5.7.2",
     "mdb-react-ui-kit": "^6.0.0",
