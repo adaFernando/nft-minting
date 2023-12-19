@@ -94,7 +94,7 @@ const useMintNFT = (props) => {
                 console.log(
                     merkleTree.verify(
                       hexProof,
-                      keccak256("0x1f8c91eB0d41E1257B8F7BAd8EE8100768e14837").toString("hex"),
+                      keccak256("").toString("hex"),
                       rootHash
                     )
                 );

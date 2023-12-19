@@ -23,8 +23,8 @@ export const ChainId = {
 
 export const contract_address = {
     [ ChainId['MAINNET'] ]: '',
-    // [ ChainId['GOERLI'] ]: '0xe8c26D5c2a5496C7D4F385d6452Ef8cD2f152031',
-    [ ChainId['GOERLI'] ]: '0x9C5C83564538abFbf4e3B6daB0b446EE4f278766'
+    // [ ChainId['GOERLI'] ]: '',
+    [ ChainId['GOERLI'] ]: ''
 
 }
 
